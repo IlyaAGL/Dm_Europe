@@ -55,14 +55,14 @@ int main() {
     int n;
     std::cin >> n;
 
-    adj.resize(n + 1);
+    adj.resize(n);
 
     for(int i = 0; i < n - 1; ++i) {
         int a, b;
         std::cin >> a >> b;
 
-        adj[a].push_back(b);
-        adj[b].push_back(a);
+        adj[a - 1].push_back(b - 1);
+        adj[b - 1].push_back(a - 1);
     }
 
     vector<int> res = prufer();
